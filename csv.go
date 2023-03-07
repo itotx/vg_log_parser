@@ -94,8 +94,8 @@ func parseCsvFile(filePath string) {
 
 	// sort data by date ank key
 	sort.SliceStable(items, func(i, j int) bool {
-		idate := strconv.Itoa(items[i].date.Year()) + "-" + items[i].date.Month().String() + "-" + strconv.Itoa(items[i].date.Day())
-		jdate := strconv.Itoa(items[j].date.Year()) + "-" + items[j].date.Month().String() + "-" + strconv.Itoa(items[j].date.Day())
+		idate := dateFormat(i)
+		jdate := dateFormat(j)
 		switch {
 		case items[i].key != items[j].key:
 			return items[i].key < items[j].key
@@ -111,7 +111,7 @@ func parseCsvFile(filePath string) {
 	groupMap := make(map[string]map[string]float64)
 
 	for _, v := range items {
-		date := strconv.Itoa(v.date.Year()) + "-" + v.date.Month().String() + "-" + strconv.Itoa(v.date.Day())
+		date := dateFormat(v.date)
 
 		addToGroupMap(groupMap, v.key, date, v.val)
 
@@ -172,4 +172,8 @@ func addToGroupMap(m map[string]map[string]float64, date string, category string
 	}
 	// set value
 	m[date][category] += value
+}
+
+func dateFormat(date time.Time) string {
+	return strconv.Itoa(date.Year()) + "-" + date.Month().String() + "-" + strconv.Itoa(date.Day())
 }
