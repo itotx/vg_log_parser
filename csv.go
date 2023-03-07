@@ -20,7 +20,7 @@ func main() {
 	fmt.Println("Парсер логов грейлога")
 	fmt.Println()
 	fmt.Println("Сформируйте csv из грейлога. для этого зайдите по адресу")
-	fmt.Println("выберите сохраненный запрос: \"ЕМИАС.ВГ timer\"")
+	fmt.Println("выберите сохраненный запрос: \"ВГ timer\"")
 	fmt.Println("More actions -> Export as CSV")
 	fmt.Println("Укажите путь до файла:")
 
