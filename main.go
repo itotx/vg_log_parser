@@ -51,9 +51,9 @@ type ChartField struct {
 func parseCsvFile(filePath string) {
 	pattern, _ := regexp.Compile(`(?P<DATETIME>\d{4}\-\d{2}\-\d{2}\s\d{2}\:\d{2}\:\d{2}).+timer[\:](?P<KEY>.+)[\:]\s(?P<VALUE>[\-]*\d+)`)
 
-	fout, _ := os.Create("parsed_" + filePath)
-	w := csv.NewWriter(fout)
-	defer w.Flush()
+	// fout, _ := os.Create("parsed_" + filePath)
+	// w := csv.NewWriter(fout)
+	// defer w.Flush()
 
 	// Load a csv file.
 	f, _ := os.Open(filePath)

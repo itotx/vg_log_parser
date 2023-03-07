@@ -15,3 +15,6 @@
 # vendor/
 
 vg_log_parser
+
+*.csv
+*.html
