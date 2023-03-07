@@ -39,6 +39,7 @@ func main() {
 	if scanner.Err() != nil {
 		fmt.Println("Error: ", scanner.Err())
 	}
+
 }
 
 type ChartField struct {
@@ -157,19 +158,20 @@ func contains(axises []string, k string) bool {
 	return false
 }
 
-func addToGroupMap(m map[string]map[string]float64, date string, category string, value float64) {
-	// init date
-	_, ok := m[date]
+func addToGroupMap(m map[string]map[string]float64, category string, dateStr string, value float64) {
+	// init category
+	_, ok := m[category]
 	if !ok {
-		m[date] = make(map[string]float64)
+		m[category] = make(map[string]float64)
 	}
-	// init cat
-	_, okcat := m[date][category]
+
+	// init dateGr
+	_, okcat := m[category][dateStr]
 	if !okcat {
-		m[date][category] = 0
+		m[category][dateStr] = 0
 	}
 	// set value
-	m[date][category] += value
+	m[category][dateStr] += value
 }
 
 func dateFormat(date time.Time) string {
