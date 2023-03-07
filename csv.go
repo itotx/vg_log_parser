@@ -39,8 +39,6 @@ func main() {
 	if scanner.Err() != nil {
 		fmt.Println("Error: ", scanner.Err())
 	}
-
-	//parseCsvFile("graylog-search-result-absolute-2023-03-03T21_00_00.000Z-2023-03-07T20_59_59.000Z.csv")
 }
 
 type ChartField struct {
