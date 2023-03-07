@@ -94,8 +94,8 @@ func parseCsvFile(filePath string) {
 
 	// sort data by date ank key
 	sort.SliceStable(items, func(i, j int) bool {
-		idate := dateFormat(i)
-		jdate := dateFormat(j)
+		idate := dateFormat(items[i].date)
+		jdate := dateFormat(items[j].date)
 		switch {
 		case items[i].key != items[j].key:
 			return items[i].key < items[j].key

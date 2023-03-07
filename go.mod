@@ -1,4 +1,4 @@
-module itotx/csv_reader
+module itotx/vg_log_parser
 
 go 1.17
 
